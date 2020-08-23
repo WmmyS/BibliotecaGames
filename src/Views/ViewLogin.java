@@ -41,6 +41,7 @@ public class ViewLogin extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        viewLoginMessageLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 255));
@@ -51,12 +52,17 @@ public class ViewLogin extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 153, 255));
 
         viewLoginBtnConect.setBackground(new java.awt.Color(0, 51, 204));
-        viewLoginBtnConect.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        viewLoginBtnConect.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
         viewLoginBtnConect.setForeground(new java.awt.Color(255, 255, 255));
         viewLoginBtnConect.setText("Conectar");
+        viewLoginBtnConect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewLoginBtnConectActionPerformed(evt);
+            }
+        });
 
         viewLoginBtnCancel.setBackground(new java.awt.Color(204, 0, 0));
-        viewLoginBtnCancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        viewLoginBtnCancel.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
         viewLoginBtnCancel.setForeground(new java.awt.Color(255, 255, 255));
         viewLoginBtnCancel.setText("Cancelar");
         viewLoginBtnCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +72,7 @@ public class ViewLogin extends javax.swing.JFrame {
         });
 
         viewLoginBtnClean.setBackground(new java.awt.Color(204, 0, 153));
-        viewLoginBtnClean.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        viewLoginBtnClean.setFont(new java.awt.Font("Trebuchet MS", 1, 16)); // NOI18N
         viewLoginBtnClean.setForeground(new java.awt.Color(255, 255, 255));
         viewLoginBtnClean.setText("Limpar");
         viewLoginBtnClean.addActionListener(new java.awt.event.ActionListener() {
@@ -76,7 +82,7 @@ public class ViewLogin extends javax.swing.JFrame {
         });
 
         viewLoginBtnConfig.setBackground(new java.awt.Color(51, 51, 51));
-        viewLoginBtnConfig.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        viewLoginBtnConfig.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         viewLoginBtnConfig.setForeground(new java.awt.Color(255, 255, 255));
         viewLoginBtnConfig.setText("Configurar");
         viewLoginBtnConfig.addActionListener(new java.awt.event.ActionListener() {
@@ -119,31 +125,37 @@ public class ViewLogin extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("20.08.001");
 
+        viewLoginMessageLabel.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        viewLoginMessageLabel.setForeground(new java.awt.Color(255, 255, 255));
+        viewLoginMessageLabel.setText(" ");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(36, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(viewLoginBtnConect, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(viewLoginBtnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(viewLoginBtnClean, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(viewLoginPassTxt)
-                                .addComponent(viewLoginUserTxt, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(viewLoginComboBoxDB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(viewLoginBtnConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(viewLoginBtnConect, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(viewLoginBtnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(viewLoginBtnClean, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(viewLoginPassTxt)
+                            .addComponent(viewLoginUserTxt, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(viewLoginComboBoxDB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(viewLoginMessageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(viewLoginBtnConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -158,7 +170,7 @@ public class ViewLogin extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
+                .addContainerGap(40, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(viewLoginUserTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
@@ -171,7 +183,9 @@ public class ViewLogin extends javax.swing.JFrame {
                     .addComponent(viewLoginComboBoxDB, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
-                .addComponent(viewLoginBtnConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(viewLoginBtnConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewLoginMessageLabel))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(viewLoginBtnConect, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -224,6 +238,11 @@ public class ViewLogin extends javax.swing.JFrame {
         viewLoginPassTxt.setText("");
     }//GEN-LAST:event_viewLoginBtnCleanActionPerformed
 
+    private void viewLoginBtnConectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewLoginBtnConectActionPerformed
+        viewLoginMessageLabel.setText("Conexão ainda não configurada!");
+        viewLoginMessageLabel.setVisible(true);
+    }//GEN-LAST:event_viewLoginBtnConectActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -272,6 +291,7 @@ public class ViewLogin extends javax.swing.JFrame {
     private javax.swing.JButton viewLoginBtnConect;
     private javax.swing.JButton viewLoginBtnConfig;
     private javax.swing.JComboBox<String> viewLoginComboBoxDB;
+    private javax.swing.JLabel viewLoginMessageLabel;
     private javax.swing.JPasswordField viewLoginPassTxt;
     private javax.swing.JTextField viewLoginUserTxt;
     // End of variables declaration//GEN-END:variables
