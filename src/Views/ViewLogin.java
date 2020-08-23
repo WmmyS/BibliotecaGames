@@ -39,6 +39,8 @@ public class ViewLogin extends javax.swing.JFrame {
         viewLoginComboBoxDB = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 255));
@@ -48,7 +50,7 @@ public class ViewLogin extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 255));
 
-        viewLoginBtnConect.setBackground(new java.awt.Color(0, 153, 0));
+        viewLoginBtnConect.setBackground(new java.awt.Color(0, 51, 204));
         viewLoginBtnConect.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         viewLoginBtnConect.setForeground(new java.awt.Color(255, 255, 255));
         viewLoginBtnConect.setText("Conectar");
@@ -73,7 +75,7 @@ public class ViewLogin extends javax.swing.JFrame {
             }
         });
 
-        viewLoginBtnConfig.setBackground(new java.awt.Color(0, 102, 255));
+        viewLoginBtnConfig.setBackground(new java.awt.Color(51, 51, 51));
         viewLoginBtnConfig.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         viewLoginBtnConfig.setForeground(new java.awt.Color(255, 255, 255));
         viewLoginBtnConfig.setText("Configurar");
@@ -108,6 +110,15 @@ public class ViewLogin extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Biblioteca de Games Login.png"))); // NOI18N
         jLabel4.setMaximumSize(new java.awt.Dimension(119, 95));
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Versão:");
+
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("20.08.001");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -133,8 +144,15 @@ public class ViewLogin extends javax.swing.JFrame {
                                 .addComponent(viewLoginUserTxt, javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(viewLoginComboBoxDB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(viewLoginBtnConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -161,8 +179,13 @@ public class ViewLogin extends javax.swing.JFrame {
                     .addComponent(viewLoginBtnClean, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -191,7 +214,9 @@ public class ViewLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_viewLoginBtnCancelActionPerformed
 
     private void viewLoginBtnConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewLoginBtnConfigActionPerformed
-        
+        ViewDBList viewDBList = new ViewDBList();
+        viewDBList.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_viewLoginBtnConfigActionPerformed
 
     private void viewLoginBtnCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewLoginBtnCleanActionPerformed
@@ -239,6 +264,8 @@ public class ViewLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton viewLoginBtnCancel;
     private javax.swing.JButton viewLoginBtnClean;
